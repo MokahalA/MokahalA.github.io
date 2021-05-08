@@ -1,0 +1,25 @@
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px;
+}
+
+hr.style{
+    border-top: 3px double #8c8b8b;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li{
+    padding-top: 10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+  
