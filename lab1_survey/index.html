@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Lab 1: Website Survey</title>
+</head>
+<body>
+
+    <!--Header-->
+    <div class = "header">
+        <h1 id="title">OnePlus UI Design Survey </h1>
+        <a></a>
+    </div>
+
+    <!--About-->
+    <div class = "about">
+        <h3>About this survey</h3>
+        <p>The following survey is in regards to the OnePlus company <a href="https://www.oneplus.com/ca_en">website</a> </p> 
+        <p>The survery is 4 questions long and will provide the company with feedback on the website user interface and overall customer satisfaction.</p>
+		<a href="https://www.oneplus.com/ca_en"><img src="images\oneplus.png"></a>
+    </div>
+
+
+    <!--Survey Form-->
+    <div class ="form">
+        <form id="survey-form" action="index.php">
+            <label for="question1">1) What is your opinion of the website's UI?</label>
+            <textarea id="question1" name="question1" rows="4" cols="55"></textarea><br><br>
+
+            <label for="question2">2) Which section(s) of the website did you browse?</label><br><br>
+            <div class="checkboxes">
+                <input type="checkbox" name="question2" value="oneplus-series">OnePlus Series<br>      
+                <input type="checkbox" name="question2" value="nord-series">Nord Series<br>      
+                <input type="checkbox" name="question2" value="shop">Shop<br>  
+                <input type="checkbox" name="question2" value="about">About<br>  
+                <input type="checkbox" name="question2" value="support">Support<br> 
+                <input type="checkbox" name="question2" value="community">Community<br> 
+                <input type="checkbox" name="question2" value="app">App<br>      
+                <input type="checkbox" name="question2" value="account">Account<br>    
+            </div><br><br>
+
+            <label for="question3">3) How did you hear about OnePlus?</label><br>
+            <select id="question3" name="question3">
+                <option value="" disabled selected>Select an option</option>
+                <option value="friend">From a friend</option>
+                <option value="advertisement">From an advertisement</option>
+                <option value="event">From an electronics display event</option>
+                <option value="none">None of the above</option>
+            </select><br><br>
+
+            <label for="question4">4) How would you rate your overall experience with the OnePlus website?</label><br><br>
+            <table style="width:60%">
+                <tr>
+                  <th>Excellent</th>
+                  <th>Good</th>
+                  <th>Average</th>
+                  <th>Bad</th>
+                  <th>Terrible</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="excellent" name="question4" value="2"></td>
+                    <td><input type="radio" id="good" name="question4" value="1"></td> 
+                    <td><input type="radio" id="average" name="question4" value="0"></td>
+                    <td><input type="radio" id="bad" name="question4" value="-1"></td>
+                    <td><input type="radio" id="terrible" name="question4" value="-2"></td>
+                </tr>
+            </table><br><br>
+
+            <button id="submitButton" type="button" class="block">Submit</button>
+            
+
+        </form>
+    </div>
+
+    <!--Footer-->
+    <div class ="footer"> 
+        <p id="signature">Site created by: Ahmad El Mokahal</p>
+    </div>
+
+</body>
+</html>
