@@ -1,0 +1,125 @@
+body{
+    scroll-behavior: smooth;
+}
+
+.header{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    background-color: rgb(209, 197, 197);
+    border-radius: 20px;
+	border-style: outset;
+    margin: 10px;
+    padding: 10px;
+}
+
+#title{
+    margin-left: 5px;
+}
+
+.about{
+    font-family:'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 10px; 
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+	border-style:ridge;
+}
+
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }	
+
+.form{
+    font-family:'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 10px; 
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+	border-style: ridge;
+}
+
+#question1, #question2, #question3, #question4{
+    display:block;
+}
+
+textarea {
+    font-family:Arial, Helvetica, sans-serif;
+    display: block;
+    height: 150px;
+    padding: 5px 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+
+  td{
+	border: 1px solid #A9A9A9;
+	width: 100px;
+	padding: 5px;
+	text-align: center;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.checkbox{
+    display: block;
+}
+
+select {
+    display: block;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+#select:focus option:first-of-type {
+    display: none;
+}
+
+
+#submitButton {
+    display: block;
+    align-self: center;
+    margin-left: 45%;
+    background-color: #628a84; 
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.6;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#submitButton:hover{
+    opacity: 1;
+}
+
+.footer{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
