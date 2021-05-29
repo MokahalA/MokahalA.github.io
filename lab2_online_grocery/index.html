@@ -1,0 +1,101 @@
+<!-- 
+credits: 
+ 	Form & button styling inspired by: www.w3schools.com
+	Javascript backend inspired by Professor Caroline Barrière's code: https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type = "text/css">
+    <title>Lab 2: Online Grocery</title>
+</head>
+<body>
+    <!--Header-->
+    <div class="header">
+        <p id="title">Fresh Depot's Online Grocery</p>
+    </div>
+
+    <!--Container-->
+    <div class="container">
+        <div class="tab">
+            <button id="clientButton" class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+            <button id="productsButton"class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+            <button id="cartButton" class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Client" class="tabcontent">
+            <h3>Client Information</h3>
+            <p>Tell us a bit about any dietary restrictions or preferences you might have.</p>
+
+            <div>                
+                <label>What type of produce do you prefer?</label>
+                <select id="type" name="type">
+                    <option value="n/a" disabled selected>Select an option</option>
+                    <option value="organic">Organic</option>
+                    <option value="none">No preference</option>
+                </select><br><br>
+
+                <label>Do you have a nut allergy?</label>
+                <select id="allergy" name="allergy">
+                    <option value="n/a" disabled selected>Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br><br>
+
+                <label>Are you lactose-intolerant?</label>
+                <select id="lactose" name="lactose">
+                    <option value="n/a" disabled selected>Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br><br>
+
+                <!--Add more personalization features-->
+                
+            </div><br><br>
+            <button  id="next-client" type="button" class="sliders" onclick="nextClick('Client')"> Next ❯ </button>
+        </div>
+        
+        <div id="Products" class="tabcontent">
+            <h3>Product List</h3>
+            <p>We provide a personalized selection of products based on your information in the client tab.</p>
+            Select items and add them to your cart:
+            <div id="displayProduct"></div>
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                Add selected items to cart
+            </button>
+
+            
+            <br><br>
+            <div>
+                <button id="previous-products" type="button" class="sliders" onclick="previousClick('Products')" > ❮ Previous </button>
+                <button id="next-products" type="button" class="sliders" onclick="nextClick('Products')" > Next ❯ </button>
+            </div>
+        </div>      
+
+        <div id="Cart" class="tabcontent">
+            <h3>Cart</h3>
+            <p>Here is your shopping cart:</p>
+            <div id="displayCart"></div>
+
+            <br><br>
+            <div>
+                <button id="previous-cart" type="button" class="sliders" onclick="previousClick('Cart')" > ❮ Previous </button>
+            </div> 
+        </div>          
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <p id="signature">Site by: Ahmad El Mokahal</p>
+    </div>
+
+    <!-- Javascript files -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/groceries.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+html{
+    height: 100%;
+}
+
+body{
+    scroll-behavior: smooth;
+    background-color: rgb(241, 238, 224);
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+
+.header{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.2em;
+    font-weight: 500;
+    margin: 10px;
+    padding: 10px;
+    color: #2a9e68;
+    position: relative;
+    text-align: center;
+}
+
+
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+.tab button {
+    background-color: inherit;
+    width: max-content;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+  
+
+.tab button:hover {
+    background-color: #ddd;
+}
+  
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    background-color: white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.sliders{
+    background-color: #2a9e68;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#next-products{
+    margin-left: 20px;
+}
+
+.container{
+    margin: 10px;
+    padding: 10px;
+    font-size: medium;
+    font-family: Times, 'Times New Roman', serif;
+    
+}
+
+select {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+#addCart{
+    margin-top: 25px;
+}
+
+
+.footer{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #2a9e68;
+    margin-top: auto;
+    position: static;
+    font-size: medium;
+    bottom: 10px;
+    flex: 0 0 30px;
+    text-align: center;
+}
