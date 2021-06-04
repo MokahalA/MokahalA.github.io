@@ -5,4 +5,4 @@ Webpage used to demo coursework &amp; projects.
 
 [Lab 2: Online Grocery](https://mokahala.github.io/lab2_online_grocery/index.html)
 
-[Lab 3: Alternate Online Grocery](https://mokahala.github.io/lab3_alternate_grocery/index.html)
+[Lab 3: Alternative Online Grocery](https://mokahala.github.io/lab3_alternative_grocery/index.html)
