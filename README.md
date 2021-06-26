@@ -9,4 +9,4 @@ Webpage used to demo coursework &amp; projects.
 
 [Lab 4: Health Service Site](https://mokahala.github.io/lab4_health_service_site/)
 
-[Lab 5/6: Enhanced Health Service Site](https://mokahala.github.io/lab5:6_enhanced_health_site/)
+[Lab 5/6: Enhanced Health Service Site](https://mokahala.github.io/lab5:6_enhanced_health_site/index.html)
