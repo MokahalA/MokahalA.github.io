@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--My Script-->
+    <script src="scripts/main.js"></script>
+    <link href="styles/style.css" rel="stylesheet" type = "text/css">
+
+    <title>Lab 5/6: Enhanced Health Service Site</title>
+</head>
+<body>
+    <section id="navigation" class="page-section bg-light" >
+      <!--Navbar-->
+      <nav class="navbar fixed-top navbar-expand-lg  navbar-light bg-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand" id="header" href="index.html"> <img id="logo" src="images/clinic.png"/> Physiofit</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#services" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">General Consultation</a></li>
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">Massage Therapy</a></li>
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">Medical Acupuncture</a></li>
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">TMJ Pain Relief Therapy </a></li>
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">Custom Knee Brace</a></li>
+                  <li><a class="dropdown-item" data-toggle="collapse" href="#services-title">Vestibular Rehabilition</a></li>
+                </ul>
+              </li>
+          
+              <li class="nav-item">
+                <a class="nav-link" href="#about-us">About Us</a>
+              </li>
+          
+            </ul>
+
+            <li class="nav navbar-nav ms-auto w-100 justify-content-end">
+              <button id="btn-book" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Online</button>
+            </li>
+
+          </div>
+        </div>
+      </nav>
+
+      <!-- Modal -->
+      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Appointment Booking</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="booking-form" class="needs-validation">
+              
+              <div class="client-name">
+                <div id="firstName" class="form-floating mb-3" novalidate>
+                  <input type="text" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput" class="form-label">First Name</label>
+                    <div class="valid-feedback">
+                      First name looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      First name is required!
+                    </div>
+
+                </div>
+                
+                <div id="lastName" class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput" class="form-label">Last Name</label>
+                </div>
+              </div>
+              
+              <div id="number" class="form-floating mb-3">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  maxlength="12" class="form-control" id="phoneNum" required>
+                <label for="phoneNum" class="form-label">Phone Number</label>
+                <p class="input-tooltip">Format: 012-345-6789 </p>
+              </div>
+
+              <div id="email" class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" required>
+                <label for="floatingInput">Email address</label>
+                <p class="input-tooltip">Format: example@mail.com </p>
+              </div>
+
+              <select id="specialist" class="form-select" required aria-describedby="Default select example" aria-required="true">
+                <option selected disabled>Select a specialist</option>
+                <option value="1">Dr. John Jackson</option>
+                <option value="2">Dr. Christina Morillo</option>
+                <option value="3">Dr. Andrea Parker</option>
+              </select><br>
+              
+
+              <select id="service" class="form-select" aria-label="Default select example" aria-required="true">
+                <option selected disabled>Select a service</option>
+                <option value="1">General Consultation</option>
+                <option value="2">Massage Therapy</option>
+                <option value="3">Medical Acupuncture</option>
+                <option value="4">TMJ pain relief therapy</option>
+                <option value="5">Custom Knee Brace</option>
+                <option value="6">Vestibular rehabilitation</option>
+              </select><br>
+
+              <p>Preferred Date & Time</p>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"></path>
+                  </svg>
+                </span>
+                  <input type="text" id="dateInput" placeholder="mm/dd/yyyy" required>
+                  <select class="form-select" required>
+                    <option selected disabled>Select a time slot</option>
+                    <option value="1">8:00 AM</option>
+                    <option value="2">9:00 AM</option>
+                    <option value="3">10:00 AM</option>
+                    <option value="4">11:00 AM</option>
+                    <option value="5">12:00 PM</option>
+                    <option value="6">1:00 PM</option>
+                    <option value="7">2:00 PM</option>
+                    <option value="8">3:00 PM</option>
+                  </select>
+              </div><br>
+
+              <p>Payment Information</p>
+              <div id="creditCard" class="form-floating mb-3">
+                <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="19" class="form-control" id="ccNum" required>
+                <label for="ccNum" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                </svg> Card Number </label>
+                <p class="input-tooltip">Format: 1234-5678-1234-5678</p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="submitBtn" class="btn btn-primary" >Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <!-- Snackbar -->
+    <div id="snackbar">Your appointment has been successfully booked.</div>
+
+    <!-- Team-->
+    <section id="team" class="page-section bg-light" >
+      <div id="employee-container" class="container">
+          <div class="text-center">
+              <h2 class="section-heading text-uppercase">Our Team</h2>
+              <h3 class="section-subheading text-muted">Our highly trained and experienced set of professionals.</h3>
+          </div>
+          <div id="employee-row" class="row">
+              <div class="col-lg-4" style="text-align: center;">
+                  <div class="team-member">
+                      <img class="img-thumbnail" src="images/john-jackson.png" alt="" />
+                      <div class="employee-name">
+                        <h4>John Jackson</h4>
+                        <p class="text-muted" style="font-weight: bold;">Physiotherapist</p>
+                      </div>
+                      <div id="availability" class="col-lg-4"> 
+                        <p class = "text-muted"> Availability: Moday - Friday <br> 8:00 AM - 3:00 PM </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4" style="text-align: center;">
+                  <div class="team-member">
+                      <img class="img-thumbnail" src="images/christina-morillo.jpg" alt="" />
+                      <div class="employee-name">
+                        <h4>Christina Morillo</h4>
+                        <p class="text-muted" style="font-weight: bold;" >Physiotherapist</p>
+                      </div>
+                      <div id="availability" class="col-lg-4"> 
+                        <p class = "text-muted"> Availability: Monday - Thursday <br> 8:00 AM - 3:00 PM  </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4" style="text-align: center;">
+                  <div class="team-member">
+                      <img class="img-thumbnail" src="images/andrea-parker.jpg" alt="" />
+                      <div class="employee-name">
+                        <h4>Andrea Parker</h4>
+                        <p class="text-muted" style="font-weight: bold;">Physiotherapist</p>
+                      </div>
+                      <div id="availability" class="col-lg-4"> 
+                        <p class = "text-muted"> Availability: Tuesday - Friday <br> 8:00 AM - 3:00 PM </p>
+                      </div>
+                  </div>
+              </div>
+          <div class="row">
+          </div>
+              <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"><br>Our practice has built up a loyal client base having served the communities of Ottawa for over 12 years. The experienced professionals at our center will be happy to assist you in your journey to becoming the healthiest version of yourself. Call directly or utilize our easy online booking system. </p></div>
+          </div>
+          <div>
+            <button id="btn-book" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#bookingModal" style="margin: 0 auto; display: block;">Book Online</button>
+          </div>
+      </div>
+    </section>
+
+    <!--Services-->
+
+    <section class="page-section bg-light">
+        <div class="text-center">
+          <h2 id="services-title" class="section-heading text-uppercase">Services offered</h2>
+        </div>
+        <div class="accordion-item" >
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              General Consultation
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#collapseOne">
+            <div class="accordion-body">
+              <p>A session with your preferred specialist where they will conduct a comprehensive health assessment, collect a full medical history, and build a personalized care plan that works to suit your needs and address any concerns you may be having. </p>
+              Estimated duration: 45-60 mins
+              <p>Price: <strong> $40/session </strong></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Massage Therapy
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#collapseTwo">
+            <div class="accordion-body">
+              <p>Massage Therapy consists primarily of hands-on manipulation of the soft tissues of the body, specifically, the muscles, connective tissue, tendons, ligaments and joints for the purpose of optimizing health.</p>
+              Estimated duration: 60 mins
+              <p>Price: <strong> $50/session </strong></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Medical Acupuncture
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="collapseThree">
+            <div class="accordion-body">
+              <p>Acupuncture is the practice of penetrating the skin with thin, solid, metallic needles which are then activated through gentle and specific movements of the practitioner's hands or with electrical stimulation.</p>
+              Estimated duration: 60 mins
+              <p>Price: <strong> $60/session </strong></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              TMJ Pain Relief Therapy 
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#collapseFour">
+            <div class="accordion-body">
+              <p> Our Physiotherapist can help to treat your TMJ by teaching you relaxation, stretching and strengthening exercises for the face, head and neck muscles. These exercises can also help to augment the effect of the appliance or mouth guard your dentist may have already provided to you. The specialist will work with you to construct a personalized program that meets your needs.</p>
+              Estimated duration: 60 mins
+              <p>Price: <strong> $40/session </strong></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Custom Knee Brace
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#collapseFive">
+            <div class="accordion-body">
+              <p>Custom knee braces are custom-fitted to your knee to help provide the right fit and protection for your knee. Our custom knee braces are low-profile and light-weight allowing you to stay active without the bulk. These knee braces are ideal for many sports like football, basketball, football, volleyball, and water sports. </p>
+              Estimated duration: 40-60 mins
+              <p>Price: <strong> $150 (including assessment costs) </strong></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              Vestibular Rehabilitation
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#collapseSix">
+            <div class="accordion-body">
+              <p>Vestibular rehabilitation therapy (VRT) is a specific form of physical therapy designed to habituate symptoms, and promote adaptation to and substitution for various aspects of deficits related to a wide variety of balance disorders.</p>
+              Estimated duration: 50-60 mins
+              <p>Price: <strong> $55/session </strong></p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+        </div>
+
+    <!-- About Us-->
+    <section class="page-section" id="about-us">
+      <div class="container">
+          <div class="text-center">
+              <h2 class="section-heading text-uppercase">About Us</h2>
+          </div>
+          <div id="clinic-info" class="row text-center">
+                <div class="col-md-4">
+                  <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-map fa-stack-1x fa-inverse"></i></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                  </svg>
+                  <h4 class="my-3">Location</h4>
+                  <p class="text-muted">123 Carling Avenue <br> Ottawa, ON K2B 8A4</p>
+              </div>
+              <div class="col-md-4">
+                  <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-phone fa-stack-1x fa-inverse"></i></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg>
+                  <h4 class="my-3">Phone Number</h4>
+                  <p class="text-muted">(613) 123-4567</p>
+              </div>
+              <div class="col-md-4">
+                  <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-file fa-stack-1x fa-inverse"></i></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
+                    <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
+                    <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"/>
+                  </svg>
+                  <h4 class="my-3">Email Address</h4>
+                  <p class="text-muted">physiofit@mail.com</p>
+              </div>
+          </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Website designed by: <b>Ahmad El Mokahal</b></span>
+      </div>
+    </footer>
+</body>
+</html>
