@@ -1,6 +1,6 @@
 # EasyTutor
 
-React
+React,
 Bootstrap 5
 
 
