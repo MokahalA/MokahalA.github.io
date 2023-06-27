@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.pinsearch@1.0.0/src/Leaflet.PinSearch.css" crossorigin="" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 400px; /* Adjust the height as desired */
+        }
+
+        .demo-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            margin-bottom: 10px;
+        }
+
+        .feature-item strong {
+            font-weight: bold;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        .github-link a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        .github-link .github-button {
+            background-color: #333234;
+        }
+
+        .github-link .npm-button {
+            background-color: #e33b3b;
+        }
+    </style>
+    <title>Leaflet PinSearch Example</title>
+</head>
+<body>
+
+    <div class="demo-container">
+        <h1>Leaflet.PinSearch Plugin</h1>
+        
+        <div class="github-link">
+            <a href="https://github.com/MokahalA/Leaflet.PinSearch" class="github-button">View on GitHub</a>
+            <a href="https://www.npmjs.com/package/leaflet.pinsearch" class="npm-button">View on NPM</a>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="features">
+            <h3>Features</h3>
+            <ul>
+                <li class="feature-item"><strong>Autocomplete:</strong> Autocomplete feature on all pin titles</li>
+                <li class="feature-item"><strong>Configurable Size:</strong> You can configure the height and width of the search bar</li>
+                <li class="feature-item"><strong>Maximum Results:</strong> You can set a limit for the maximum number of search results displayed</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.pinsearch@1.0.0/src/Leaflet.PinSearch.js" crossorigin=""></script>
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Dummy markers
+        L.marker([51.505, -0.09], { title: 'Marker 1' }).addTo(map);
+        L.marker([51.51, -0.1], { title: 'Marker 2' }).addTo(map);
+        L.marker([51.515, -0.09], { title: 'Marker 3' }).addTo(map);
+        L.marker([45.424, -75.695], { title: 'Marker 4' }).addTo(map);
+        L.marker([43.6532, -79.3832], { title: 'Marker 5' }).addTo(map);
+
+        // PinSearch component
+        var searchBar = L.control.pinSearch({
+            position: 'topright',
+            placeholder: 'Search...',
+            buttonText: 'Search',
+            onSearch: function(query) {
+                console.log('Search query:', query);
+                // Handle the search query here
+            },
+            searchBarWidth: '200px',
+            searchBarHeight: '30px',
+            maxSearchResults: 5
+        }).addTo(map);
+    </script>
+</body>
+</html>
